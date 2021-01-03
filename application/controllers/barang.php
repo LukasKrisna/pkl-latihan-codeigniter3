@@ -43,6 +43,14 @@ class Barang extends CI_Controller
         $this->m_barang->input_data($data, 'barang');
         redirect('barang/index');
     }
+    public function hapus($kode_barang)
+    {
+      $where = array(
+        'kode_barang' => $kode_barang  
+      );
+      $this->m_barang->hapus_data($where, 'barang');
+      redirect('barang/index'); 
+    }
 }
 // kode_barang
 // nama_barang

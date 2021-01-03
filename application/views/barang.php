@@ -35,6 +35,7 @@
                 <th>HARGA BELI</th>
                 <th>KEADAAN BARANG</th>
                 <th>KETERANGAN</th>
+                <th colspan="2">AKSI</th>
             </tr>
 
             <?php 
@@ -42,18 +43,20 @@
             foreach ($barang as $brg ): ?>
             <tr>
                 <td><?php echo $no++ ?></td>
-                <td><?php echo $brg->kode_barang?></td>
-                <td><?php echo $brg->nama_barang?></td>
-                <td><?php echo $brg->foto_barang?></td>
-                <td><?php echo $brg->merk?></td>
-                <td><?php echo $brg->no_seri_pabrik?></td>
-                <td><?php echo $brg->ukuran?></td>
-                <td><?php echo $brg->bahan?></td>
-                <td><?php echo $brg->tahun_pembuatan?></td>
-                <td><?php echo $brg->jumlah_barang?></td>
-                <td><?php echo $brg->harga_beli?></td>
-                <td><?php echo $brg->keadaan_barang?></td>
-                <td><?php echo $brg->keterangan?></td>
+                <td><?php echo $brg->kode_barang;?></td>
+                <td><?php echo $brg->nama_barang;?></td>
+                <td><?php echo $brg->foto_barang;?></td>
+                <td><?php echo $brg->merk;?></td>
+                <td><?php echo $brg->no_seri_pabrik;?></td>
+                <td><?php echo $brg->ukuran;?></td>
+                <td><?php echo $brg->bahan;?></td>
+                <td><?php echo $brg->tahun_pembuatan;?></td>
+                <td><?php echo $brg->jumlah_barang;?></td>
+                <td><?php echo $brg->harga_beli;?></td>
+                <td><?php echo $brg->keadaan_barang;?></td>
+                <td><?php echo $brg->keterangan;?></td>
+                <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('barang/hapus/'.$brg->kode_barang, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                <td><div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div></td>
             </tr>
             <?php endforeach; ?>
         </table>
@@ -104,7 +107,7 @@
             </div>
             <div class="form-group">
                 <label>Tahun Pembuatan</label>
-                <input type="text" name="tahun_pembuatan" class="form-control">
+                <input type="date" name="tahun_pembuatan" class="form-control">
             </div>
             <div class="form-group">
                 <label>Jumlah Barang</label>
