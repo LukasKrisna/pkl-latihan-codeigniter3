@@ -22,7 +22,10 @@ class Home extends CI_Controller {
 	{
         $this->load->model('showData');
         $data ['barang'] = $this->showData->get_data();
-
-        $this->load->view('viewDatabase', $data);
+		
+		
+		$this->load->view('viewDatabase', $data);
+		
+		
 	}
 }
