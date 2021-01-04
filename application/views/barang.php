@@ -28,13 +28,9 @@
                 <th>FOTO BARANG</th>
                 <th>MERK</th>
                 <th>NO SERI PABRIK</th>
-                <th>UKURAN</th>
-                <th>BAHAN</th>
-                <th>TAHUN PEMBUATAN</th>
                 <th>JUMLAH BARANG</th>
                 <th>HARGA BELI</th>
                 <th>KEADAAN BARANG</th>
-                <th>KETERANGAN</th>
                 <th colspan="2">AKSI</th>
             </tr>
 
@@ -48,13 +44,10 @@
                 <td><?php echo $brg->foto_barang;?></td>
                 <td><?php echo $brg->merk;?></td>
                 <td><?php echo $brg->no_seri_pabrik;?></td>
-                <td><?php echo $brg->ukuran;?></td>
-                <td><?php echo $brg->bahan;?></td>
-                <td><?php echo $brg->tahun_pembuatan;?></td>
                 <td><?php echo $brg->jumlah_barang;?></td>
                 <td><?php echo $brg->harga_beli;?></td>
-                <td><?php echo $brg->keadaan_barang;?></td>
-                <td><?php echo $brg->keterangan;?></td>
+                <td><?php echo $brg->keadaan_barang;?></td>               
+                <td><?php echo anchor('barang/detail/'.$brg->kode_barang, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                 <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('barang/hapus/'.$brg->kode_barang, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td><?php echo anchor('barang/edit/'.$brg->kode_barang, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
             </tr>
@@ -106,10 +99,6 @@
                 <input type="text" name="bahan" class="form-control">
             </div>
             <div class="form-group">
-                <label>Tahun Pembuatan</label>
-                <input type="date" name="tahun_pembuatan" class="form-control">
-            </div>
-            <div class="form-group">
                 <label>Jumlah Barang</label>
                 <input type="text" name="jumlah_barang" class="form-control">
             </div>
@@ -130,6 +119,7 @@
                 <label>Keterangan</label>
                 <input type="text" name="keterangan" class="form-control">
             </div>
+            
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

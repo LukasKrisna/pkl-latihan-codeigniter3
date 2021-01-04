@@ -3,7 +3,7 @@ class Barang extends CI_Controller
 {
     public function index()
     {
-        $data['barang'] = $this->m_barang->tampilData()->result();
+    $data['barang'] = $this->m_barang->tampilData()->result();
 
     $this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
@@ -97,6 +97,17 @@ class Barang extends CI_Controller
       $where = array('kode_barang' => $kode_barang, );
       $this->m_barang->update_data($where, $data, 'barang');
       redirect('barang/index');
+    }
+    public function detail($kode_barang)
+    {
+      $this->load->model('m_barang');
+      $detail = $this->m_barang->detail_data($kode_barang);
+      $data['detail'] = $detail;
+
+    $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('detail', $data);
+		$this->load->view('templates/footer');
     }
 }
 // kode_barang

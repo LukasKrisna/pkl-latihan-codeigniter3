@@ -23,4 +23,9 @@ class M_barang extends CI_Model
         $this->db->where($where);
         $this->db->update($table, $data);
     }
+    public function detail_data($kode_barang = NULL)
+    {
+        $query = $this->db->get_where('barang', array('kode_barang' => $kode_barang))->row();
+        return $query;
+    }
 }
