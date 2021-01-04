@@ -21,6 +21,7 @@
             </i>
         </button>
         <a href="<?php echo base_url('barang/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
+        <a href="<?php echo base_url('barang/pdf'); ?>" class="btn btn-warning"><i class="fa fa-file">Export PDF</i></a>
         <table class="table">
             <tr>
                 <th>NO</th>
