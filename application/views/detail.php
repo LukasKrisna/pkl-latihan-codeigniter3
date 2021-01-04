@@ -12,7 +12,9 @@
             </tr>
             <tr>
                 <th>Foto Barang</th>
-                <td><?php echo $detail->foto_barang ?></td>
+                <td>
+                    <img src="<?php echo base_url();?>assets/foto_barang/<?php echo $detail->foto_barang; ?>" width="90" height="110">
+                </td>
             </tr>
             <tr>
                 <th>Merk</th>

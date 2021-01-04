@@ -20,6 +20,7 @@
                 Tambah Data Barang
             </i>
         </button>
+        <a href="<?php echo base_url('barang/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
         <table class="table">
             <tr>
                 <th>NO</th>
@@ -41,7 +42,9 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $brg->kode_barang;?></td>
                 <td><?php echo $brg->nama_barang;?></td>
-                <td><?php echo $brg->foto_barang;?></td>
+                <td>
+                  <img src="<?php echo base_url();?>assets/foto_barang/<?php echo $brg->foto_barang; ?>" width="90" height="110">
+                </td>
                 <td><?php echo $brg->merk;?></td>
                 <td><?php echo $brg->no_seri_pabrik;?></td>
                 <td><?php echo $brg->jumlah_barang;?></td>
@@ -69,7 +72,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post"action="<?php echo base_url().'barang/tambahAksi'?>">
+        <?php echo form_open_multipart('barang/tambahAksi'); ?>
             <div class="form-group">
                 <label>Kode Barang</label>
                 <input type="text" name="kode_barang" class="form-control">
@@ -80,7 +83,7 @@
             </div>
             <div class="form-group">
                 <label>Foto Barang</label>
-                <input type="text" name="foto_barang" class="form-control">
+                <input type="file" name="foto_barang" class="form-control">
             </div>
             <div class="form-group">
                 <label>Merk Barang</label>
@@ -97,6 +100,10 @@
             <div class="form-group">
                 <label>Bahan</label>
                 <input type="text" name="bahan" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Tahun Pembuatan</label>
+                <input type="date" name="tahun_pembuatan" class="form-control">
             </div>
             <div class="form-group">
                 <label>Jumlah Barang</label>
@@ -122,7 +129,7 @@
             
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
+        <?php echo form_close(); ?>
       </div>
       <div class="modal-footer">
         

@@ -14,7 +14,7 @@ class Barang extends CI_Controller
     {
         $kode_barang      = $this->input->post('kode_barang');
         $nama_barang      = $this->input->post('nama_barang');
-        $foto_barang      = $this->input->post('foto_barang');
+        $foto_barang      = $_FILES['foto_barang'];
         $merk             = $this->input->post('merk');
         $no_seri_pabrik   = $this->input->post('no_seri_pabrik');
         $ukuran           = $this->input->post('ukuran');
@@ -24,6 +24,21 @@ class Barang extends CI_Controller
         $harga_beli       = $this->input->post('harga_beli');
         $keadaan_barang   = $this->input->post('keadaan_barang');
         $keterangan       = $this->input->post('keterangan');
+        if ($foto_barang='') {
+          # code...
+        }else{
+          $config['upload_path']      = './assets/foto_barang';
+          $config['allowed_types']    = 'jpg|png|gif';
+
+          $this->load->library('upload', $config);
+          
+          if (!$this->upload->do_upload('foto_barang')) {
+            echo "Upload Gagal";
+            die();
+          }else {
+            $foto_barang = $this->upload->data('file_name');
+          }
+        }
 
         $data = array(
           'kode_barang'         => $kode_barang,
@@ -108,6 +123,11 @@ class Barang extends CI_Controller
 		$this->load->view('templates/sidebar');
 		$this->load->view('detail', $data);
 		$this->load->view('templates/footer');
+    }
+    public function print()
+    {
+      $data['barang'] = $this->m_barang->tampilData('barang')->result();
+      $this->load->view('print_barang', $data);
     }
 }
 // kode_barang
