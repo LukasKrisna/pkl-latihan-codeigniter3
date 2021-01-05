@@ -147,6 +147,65 @@ class Barang extends CI_Controller
 
 
     }
+    public function excel()
+    {
+      $data['barang'] = $this->m_barang->tampilData('barang')->result();
+      require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
+      require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+      $object = new PHPExcel();
+      $object->getProperties()->setCreator("Lukas Krisna");
+      $object->getProperties()->setLastModifiedBy("Lukas Krisna");
+      $object->getProperties()->setTitle("Data Barang");
+
+      $object->setActiveSheetIndex(0);
+
+      $object->getActiveSheet()->setCellValue('A1', 'No');
+      $object->getActiveSheet()->setCellValue('B1', 'Kode Barang');
+      $object->getActiveSheet()->setCellValue('C1', 'Nama Barang');
+      $object->getActiveSheet()->setCellValue('D1', 'Foto Barang');
+      $object->getActiveSheet()->setCellValue('E1', 'Merk');
+      $object->getActiveSheet()->setCellValue('F1', 'No Seri Pabrik');
+      $object->getActiveSheet()->setCellValue('G1', 'Ukuran');
+      $object->getActiveSheet()->setCellValue('H1', 'Bahan');
+      $object->getActiveSheet()->setCellValue('I1', 'Tahun Pembuatan');
+      $object->getActiveSheet()->setCellValue('J1', 'Jumlah Barang');
+      $object->getActiveSheet()->setCellValue('K1', 'Harga Beli');
+      $object->getActiveSheet()->setCellValue('L1', 'Keadaan Barang');
+      $object->getActiveSheet()->setCellValue('M1', 'Keterangan');
+
+      $baris = 2;
+      $no = 1;
+      foreach ($data['barang'] as $brg ) {
+        $object->getActiveSheet()->setCellValue('A'.$baris, $no++);
+        $object->getActiveSheet()->setCellValue('B'.$baris, $brg->kode_barang);
+        $object->getActiveSheet()->setCellValue('C'.$baris, $brg->nama_barang);
+        $object->getActiveSheet()->setCellValue('D'.$baris, $brg->foto_barang);
+        $object->getActiveSheet()->setCellValue('E'.$baris, $brg->merk);
+        $object->getActiveSheet()->setCellValue('F'.$baris, $brg->no_seri_pabrik);
+        $object->getActiveSheet()->setCellValue('G'.$baris, $brg->ukuran);
+        $object->getActiveSheet()->setCellValue('H'.$baris, $brg->bahan);
+        $object->getActiveSheet()->setCellValue('I'.$baris, $brg->tahun_pembuatan);
+        $object->getActiveSheet()->setCellValue('J'.$baris, $brg->jumlah_barang);
+        $object->getActiveSheet()->setCellValue('K'.$baris, $brg->harga_beli);
+        $object->getActiveSheet()->setCellValue('L'.$baris, $brg->keadaan_barang);
+        $object->getActiveSheet()->setCellValue('M'.$baris, $brg->keterangan);
+
+        $baris++;
+      }
+      $filename = "Data_Barang".'.xlsx';
+
+      $object->getActiveSheet()->setTitle("Data Barang");
+
+      header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      header('Content-Disposition: attachment;filename="'.$filename. '"');
+      header('Cache-Control: max-age=0');
+
+      $writer = PHPExcel_IOFactory::createwriter($object, 'Excel2007');
+      $writer->save('php://output');
+
+      exit;
+    }
 }
 // kode_barang
 // nama_barang

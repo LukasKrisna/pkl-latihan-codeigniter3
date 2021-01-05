@@ -21,7 +21,17 @@
             </i>
         </button>
         <a href="<?php echo base_url('barang/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
-        <a href="<?php echo base_url('barang/pdf'); ?>" class="btn btn-warning"><i class="fa fa-file">Export PDF</i></a>
+        <div class="dropdown inline">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-download"></i> Export
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="<?php echo base_url('barang/pdf'); ?>">PDF</a></li>
+            <li><a href="<?php echo base_url('barang/excel'); ?>">Excel</a></li>
+          </ul>
+        </div>
+
         <table class="table">
             <tr>
                 <th>NO</th>
