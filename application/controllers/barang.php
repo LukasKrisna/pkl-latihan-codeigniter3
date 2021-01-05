@@ -206,6 +206,16 @@ class Barang extends CI_Controller
 
       exit;
     }
+    public function search()
+    {
+      $keyword = $this->input->post('keyword');
+      $data['barang'] = $this->m_barang->get_keyword($keyword);
+
+    $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('barang', $data);
+		$this->load->view('templates/footer');
+    }
 }
 // kode_barang
 // nama_barang

@@ -31,6 +31,12 @@
             <li><a href="<?php echo base_url('barang/excel'); ?>">Excel</a></li>
           </ul>
         </div>
+        <div class="navbar-form navbar-right">
+          <?php echo form_open('barang/search'); ?>
+            <input type="text" name="keyword" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-success">Cari</button>
+          <?php echo form_close(); ?>
+        </div>
 
         <table class="table">
             <tr>

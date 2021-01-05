@@ -28,4 +28,23 @@ class M_barang extends CI_Model
         $query = $this->db->get_where('barang', array('kode_barang' => $kode_barang))->row();
         return $query;
     }
+    public function get_keyword($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('barang');
+        $this->db->like('nama_barang', $keyword);
+        $this->db->or_like('kode_barang', $keyword);
+        $this->db->or_like('foto_barang', $keyword);
+        $this->db->or_like('merk', $keyword);
+        $this->db->or_like('no_seri_pabrik', $keyword);
+        $this->db->or_like('ukuran', $keyword);
+        $this->db->or_like('bahan', $keyword);
+        $this->db->or_like('tahun_pembuatan', $keyword);
+        $this->db->or_like('jumlah_barang', $keyword);
+        $this->db->or_like('harga_beli', $keyword);
+        $this->db->or_like('keadaan_barang', $keyword);
+        $this->db->or_like('keterangan', $keyword);
+
+        return $this->db->get()->result();
+    }
 }
