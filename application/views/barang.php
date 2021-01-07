@@ -15,6 +15,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <section class="content">
+        <?php echo $this->session->flashdata('message');?>
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-plus">
                 Tambah Data Barang

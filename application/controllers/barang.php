@@ -56,6 +56,14 @@ class Barang extends CI_Controller
         );
 
         $this->m_barang->input_data($data, 'barang');
+        $this->session->set_flashdata('message', '
+        <div class="alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          Data Berhasil Ditambahkan!
+        </div>');
+
         redirect('barang/index');
     }
     public function hapus($kode_barang)
@@ -64,6 +72,14 @@ class Barang extends CI_Controller
         'kode_barang' => $kode_barang  
       );
       $this->m_barang->hapus_data($where, 'barang');
+      $this->session->set_flashdata('message', '
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          Data Berhasil Dihapus!
+        </div>');
+
       redirect('barang/index'); 
     }
     public function edit($kode_barang)
@@ -111,6 +127,14 @@ class Barang extends CI_Controller
       );
       $where = array('kode_barang' => $kode_barang, );
       $this->m_barang->update_data($where, $data, 'barang');
+      $this->session->set_flashdata('message', '
+        <div class="alert alert-primary alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          Data Berhasil Diupdate!
+        </div>');
+
       redirect('barang/index');
     }
     public function detail($kode_barang)
