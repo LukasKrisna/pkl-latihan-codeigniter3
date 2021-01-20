@@ -16,6 +16,9 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Login</h1>
                                     </div>
+
+                                    <?php echo $this->session->flashdata('register') ?>
+
                                     <form class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
