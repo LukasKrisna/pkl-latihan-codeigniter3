@@ -5,9 +5,10 @@ class User extends CI_Controller
 {
     public function index()
     {   
-        $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('dashboard');
-		$this->load->view('templates/footer');
+        $data['user'] = $this->db->get_where('user', [
+            'email' => $this->session->userdata('email')
+        ])->row_array();
+
+        echo 'Selamat datang ' . $data['user']['nama'] ;
     }
 }

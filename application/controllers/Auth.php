@@ -45,17 +45,17 @@ class Auth extends CI_Controller
 
         } else {
             $data = [
-                'nama'          => htmlspecialchars($this->input->post('nama', true)),
+                'nama'          => htmlspecialchars($this->input->post('name', true)),
                 'email'         => htmlspecialchars($this->input->post('email', true)),
                 'foto'          => 'default.jpg',
-                'password'      => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'password'      => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id'       => 2,
                 'is_active'     => 1,
                 'date_created'  => time()
             ];
 
             $this->db->insert('user', $data);
-            $this->session->set_flashdata('register', '<div class="alert alert-success" role="alert">
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Akun berhasil ter-registrasi!</div>');
             redirect('auth');
         }
