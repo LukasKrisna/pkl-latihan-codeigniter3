@@ -83,4 +83,36 @@ class Ruangan extends CI_Controller
 		$this->load->view('editRuangan', $data);
 		$this->load->view('templates/footer');
     }
+    public function updateData()
+    {
+        $kode_ruangan      = $this->input->post('kode_ruangan');
+        $kode_dinas        = $this->input->post('kode_dinas');
+        $nama_ruangan      = $this->input->post('nama_ruangan');
+        $foto_ruangan      = $this->input->post('foto_ruangan');
+        $luas_ruangan      = $this->input->post('luas_ruangan');
+        $jumlah_barang     = $this->input->post('jumlah_barang');
+        $aset_ruangan      = $this->input->post('aset_ruangan');
+        $keterangan        = $this->input->post('keterangan');
+
+        $data = array(
+            'kode_ruangan'  => $kode_ruangan,
+            'kode_dinas'    => $kode_dinas,
+            'nama_ruangan'  => $nama_ruangan,
+            'foto_ruangan'  => $foto_ruangan,
+            'luas_ruangan'  => $luas_ruangan,
+            'jumlah_barang' => $jumlah_barang,
+            'aset_ruangan'  => $aset_ruangan,
+            'keterangan'    => $keterangan
+        );
+        $where = array('kode_ruangan' => $kode_ruangan);
+        $this->m_ruangan->updateData($where, $data, 'ruangan');
+        $this->session->set_flashdata('message', '<div class="alert alert-primary alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        Data Berhasil Diupdate!
+        </div>');
+
+        redirect('ruangan/index');
+    }
 }
