@@ -76,7 +76,7 @@ class Ruangan extends CI_Controller
     public function editData($kode_ruangan)
     {
         $where = array('kode_ruangan' => $kode_ruangan);
-        $data['barang'] = $this->m_ruangan->editData($where, 'ruangan')->result();
+        $data['ruangan'] = $this->m_ruangan->editData($where, 'ruangan')->result();
 
         $this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
@@ -114,5 +114,16 @@ class Ruangan extends CI_Controller
         </div>');
 
         redirect('ruangan/index');
+    }
+    public function detail($kode_ruangan)
+    {
+        $this->load->model('m_ruangan');
+        $detail = $this->m_ruangan->detailData($kode_ruangan);
+        $data['detail'] = $detail;
+
+        $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('detailRuangan', $data);
+		$this->load->view('templates/footer');
     }
 }

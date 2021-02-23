@@ -23,6 +23,11 @@ class M_ruangan extends CI_Model
         $this->db->where($where);
         $this->db->update($table, $data);
     }
+    public function detailData($kode_ruangan = NULL)
+    {
+        $query = $this->db->get_where('ruangan', array('kode_ruangan' => $kode_ruangan))->row();
+        return $query;
+    }
 }
 
 

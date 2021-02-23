@@ -1,6 +1,8 @@
 <div class="content-wrapper">
     <section class="content">
-        <?php foreach($ruangan as $rua){ ?>
+        <?php 
+        if (isset($ruangan)) {
+            foreach ($ruangan as $rua ) {?>
         <form action="<?php echo base_url().'ruangan/updateData';?>" method="post">
             <div class="form-group">
                 <label>Kode Ruangan</label>
@@ -38,6 +40,6 @@
             <button type="submit" class="btn btn-primary">Simpan</button>
 
         </form>
-        <?php } ?>
+        <?php }} ?>
     </section>
 </div>

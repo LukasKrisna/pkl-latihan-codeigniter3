@@ -38,10 +38,10 @@
                 <th>KODE DINAS</th>
                 <th>NAMA RUANGAN</th>
                 <th>FOTO RUANGAN</th>
-                <th>LUAS RUANGAN</th>
-                <th>JUMLAH BARANG</th>
+                <!-- <th>LUAS RUANGAN</th> -->
+                <!-- <th>JUMLAH BARANG</th> -->
                 <th>ASET RUANGAN</th>
-                <th>KETERANGAN</th>
+                <!-- <th>KETERANGAN</th> -->
                 <th colspan="2">AKSI</th>
             </tr>
             <?php 
@@ -56,11 +56,11 @@
                 <td>
                     <img src="<?php echo base_url();?>assets/foto_ruangan/<?php echo $rua->foto_ruangan;?>" width="90" height="110">
                 </td>
-                <td><?php echo $rua->luas_ruangan; ?></td>
-                <td><?php echo $rua->jumlah_barang; ?></td>
+                <!-- <td><?php echo $rua->luas_ruangan; ?></td> -->
+                <!-- <td><?php echo $rua->jumlah_barang; ?></td> -->
                 <td><?php echo $rua->aset_ruangan; ?></td>
-                <td><?php echo $rua->keterangan; ?></td>
-                <td><?php echo anchor('barang/detail/'.$rua->kode_ruangan, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
+                <!-- <td><?php echo $rua->keterangan; ?></td> -->
+                <td><?php echo anchor('ruangan/detail/'.$rua->kode_ruangan, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                 <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('ruangan/hapusData/'.$rua->kode_ruangan, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td><?php echo anchor('ruangan/editData/'.$rua->kode_ruangan, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
             </tr>
