@@ -126,4 +126,9 @@ class Ruangan extends CI_Controller
 		$this->load->view('detailRuangan', $data);
 		$this->load->view('templates/footer');
     }
+    public function print()
+    {
+        $data['ruangan'] = $this->m_ruangan->tampilData('ruangan')->result();
+        $this->load->view('print_ruangan', $data);
+    }
 }
