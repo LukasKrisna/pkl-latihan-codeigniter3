@@ -131,4 +131,14 @@ class Ruangan extends CI_Controller
         $data['ruangan'] = $this->m_ruangan->tampilData('ruangan')->result();
         $this->load->view('print_ruangan', $data);
     }
+    public function search()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['ruangan'] = $this->m_ruangan->get_keyword($keyword);
+
+        $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('ruangan', $data);
+		$this->load->view('templates/footer');
+    }
 }

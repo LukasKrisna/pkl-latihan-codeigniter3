@@ -28,6 +28,20 @@ class M_ruangan extends CI_Model
         $query = $this->db->get_where('ruangan', array('kode_ruangan' => $kode_ruangan))->row();
         return $query;
     }
+    public function get_keyword($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('ruangan');
+        $this->db->like('kode_ruangan', $keyword);
+        $this->db->or_like('kode_dinas', $keyword);
+        $this->db->or_like('nama_ruangan', $keyword);
+        $this->db->or_like('luas_ruangan', $keyword);
+        $this->db->or_like('jumlah_barang', $keyword);
+        $this->db->or_like('aset_ruangan', $keyword);
+        $this->db->or_like('keterangan', $keyword);
+
+        return $this->db->get()->result();
+    }
 }
 
 

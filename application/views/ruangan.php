@@ -26,7 +26,7 @@
         </button>
         <a href="<?php echo base_url('ruangan/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
         <div class="navbar-form navbar-right">
-          <?php echo form_open('barang/search'); ?>
+          <?php echo form_open('ruangan/search'); ?>
             <input type="text" name="keyword" class="form-control" placeholder="Search">
             <button type="submit" class="btn btn-success">Cari</button>
           <?php echo form_close(); ?>
