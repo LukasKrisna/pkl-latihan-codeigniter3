@@ -109,4 +109,9 @@ class Transaksi extends CI_Controller
 		$this->load->view('detailTransaksi', $data);
 		$this->load->view('templates/footer');
     }
+    public function printData()
+    {
+      $data['transaksi'] = $this->m_transaksi->tampilData()->result();
+      $this->load->view('print_transaksi', $data);
+    }
 }

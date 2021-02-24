@@ -28,6 +28,21 @@ class M_transaksi extends CI_Model
         $query = $this->db->get_where('transaksi', array('kode_transaksi' => $kode_transaksi))->row();
         return $query;
     }
+    public function searchData($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->like('kode_transaksi', $keyword);
+        $this->db->or_like('kode_dinas', $keyword);
+        $this->db->or_like('kode_barang', $keyword);
+        $this->db->or_like('harga', $keyword);
+        $this->db->or_like('tempat_pembelian', $keyword);
+        $this->db->or_like('tanggal_pembelian', $keyword);
+        $this->db->or_like('keterangan', $keyword);
+        $this->db->or_like('tahun_pembuatan', $keyword);
+
+        return $this->db->get()->result();
+    }
 }
 
 

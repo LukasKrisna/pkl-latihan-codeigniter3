@@ -21,7 +21,7 @@
                 Tambah Data Transaksi
             </i>
         </button>
-        <a href="<?php echo base_url('barang/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
+        <a href="<?php echo base_url('transaksi/printData'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
         <div class="navbar-form navbar-right">
           <?php echo form_open('barang/search'); ?>
             <input type="text" name="keyword" class="form-control" placeholder="Search">
