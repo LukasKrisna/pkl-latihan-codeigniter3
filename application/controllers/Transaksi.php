@@ -67,4 +67,35 @@ class Transaksi extends CI_Controller
 		$this->load->view('editTransaksi', $data);
 		$this->load->view('templates/footer');
     }
+    public function updateData()
+    {
+        $kode_transaksi     = $this->input->post('kode_transaksi');
+        $kode_dinas         = $this->input->post('kode_dinas');
+        $kode_barang        = $this->input->post('kode_barang');
+        $harga              = $this->input->post('harga');
+        $tempat_pembelian   = $this->input->post('tempat_pembelian');
+        $tanggal_pembelian  = $this->input->post('tanggal_pembelian');
+        $keterangan         = $this->input->post('keterangan');
+
+        $data = array(
+            'kode_transaksi'    => $kode_transaksi,
+            'kode_dinas'        => $kode_dinas,
+            'kode_barang'       => $kode_barang,
+            'harga'             => $harga,
+            'tempat_pembelian'  => $tempat_pembelian,
+            'tanggal_pembelian' => $tanggal_pembelian,
+            'keterangan'        => $keterangan 
+        );
+        $where = array('kode_barang' => $kode_barang, );
+        $this->m_transaksi->updateData($where, $data, 'transaksi');
+        $this->session->set_flashdata('message', '
+        <div class="alert alert-primary alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          Data Berhasil Diupdate!
+        </div>');
+
+        redirect('transaksi/index');
+    }
 }
