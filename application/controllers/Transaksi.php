@@ -98,4 +98,15 @@ class Transaksi extends CI_Controller
 
         redirect('transaksi/index');
     }
+    public function detailData($kode_transaksi)
+    {
+        $this->load->model('m_transaksi');
+        $detail = $this->m_transaksi->detailData($kode_transaksi);
+        $data['detail'] = $detail;
+
+        $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('detailTransaksi', $data);
+		$this->load->view('templates/footer');
+    }
 }

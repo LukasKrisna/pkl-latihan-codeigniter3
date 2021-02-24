@@ -23,6 +23,11 @@ class M_transaksi extends CI_Model
         $this->db->where($where);
         $this->db->update($table, $data);
     }
+    public function detailData($kode_transaksi = NULL)
+    {
+        $query = $this->db->get_where('transaksi', array('kode_transaksi' => $kode_transaksi))->row();
+        return $query;
+    }
 }
 
 
