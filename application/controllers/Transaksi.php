@@ -8,9 +8,9 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->m_transaksi->tampilData()->result();
 
         $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('transaksi', $data);
-		$this->load->view('templates/footer');
+		    $this->load->view('templates/sidebar');
+		    $this->load->view('transaksi', $data);
+		    $this->load->view('templates/footer');
     }
     public function inputData()
     {
@@ -63,9 +63,9 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->m_transaksi->editData($where, 'transaksi')->result();
 
         $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('editTransaksi', $data);
-		$this->load->view('templates/footer');
+		    $this->load->view('templates/sidebar');
+		    $this->load->view('editTransaksi', $data);
+		    $this->load->view('templates/footer');
     }
     public function updateData()
     {
@@ -105,9 +105,9 @@ class Transaksi extends CI_Controller
         $data['detail'] = $detail;
 
         $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('detailTransaksi', $data);
-		$this->load->view('templates/footer');
+		    $this->load->view('templates/sidebar');
+		    $this->load->view('detailTransaksi', $data);
+		    $this->load->view('templates/footer');
     }
     public function printData()
     {
@@ -120,9 +120,9 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->m_transaksi->searchData($keyword);
 
         $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('transaksi', $data);
-		$this->load->view('templates/footer');
+		    $this->load->view('templates/sidebar');
+		    $this->load->view('transaksi', $data);
+		    $this->load->view('templates/footer');
     }
 }
 

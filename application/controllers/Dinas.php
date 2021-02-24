@@ -92,7 +92,7 @@ class Dinas extends CI_Controller
     public function search()
     {
       $keyword = $this->input->post('keywordDinas');
-      $data['barang'] = $this->m_dinas->search($keyword);
+      $data['dinas'] = $this->m_dinas->search($keyword);
 
       $this->load->view('templates/header');
 		  $this->load->view('templates/sidebar');

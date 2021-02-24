@@ -22,16 +22,6 @@
             </i>
         </button>
         <a href="<?php echo base_url('barang/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
-        <div class="dropdown inline">
-          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <i class="fa fa-download"></i> Export
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="<?php echo base_url('barang/pdf'); ?>">PDF</a></li>
-            <li><a href="<?php echo base_url('barang/excel'); ?>">Excel</a></li>
-          </ul>
-        </div>
         <div class="navbar-form navbar-right">
           <?php echo form_open('barang/search'); ?>
             <input type="text" name="keyword" class="form-control" placeholder="Search">
