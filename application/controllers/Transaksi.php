@@ -111,7 +111,18 @@ class Transaksi extends CI_Controller
     }
     public function printData()
     {
-      $data['transaksi'] = $this->m_transaksi->tampilData()->result();
-      $this->load->view('print_transaksi', $data);
+        $data['transaksi'] = $this->m_transaksi->tampilData()->result();
+        $this->load->view('print_transaksi', $data);
+    }
+    public function searchData()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['transaksi'] = $this->m_transaksi->searchData($keyword);
+
+        $this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('transaksi', $data);
+		$this->load->view('templates/footer');
     }
 }
+

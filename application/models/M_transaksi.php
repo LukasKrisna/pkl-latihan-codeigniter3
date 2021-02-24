@@ -39,7 +39,6 @@ class M_transaksi extends CI_Model
         $this->db->or_like('tempat_pembelian', $keyword);
         $this->db->or_like('tanggal_pembelian', $keyword);
         $this->db->or_like('keterangan', $keyword);
-        $this->db->or_like('tahun_pembuatan', $keyword);
 
         return $this->db->get()->result();
     }
