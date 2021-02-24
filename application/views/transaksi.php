@@ -55,7 +55,7 @@
                 <td><?php echo $tra->tanggal_pembelian;?></td>
                 <td><?php echo $tra->keterangan;?></td>               
                 <td><?php echo anchor('barang/detail/'.$tra->kode_transaksi, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
-                <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('barang/hapus/'.$tra->kode_transaksi, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('transaksi/hapusData/'.$tra->kode_transaksi, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td><?php echo anchor('barang/edit/'.$tra->kode_transaksi, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
             </tr>
             <?php endforeach; ?>
@@ -76,55 +76,30 @@
         </button>
       </div>
       <div class="modal-body">
-        <?php echo form_open_multipart('barang/tambahAksi'); ?>
+        <?php echo form_open_multipart('transaksi/inputData'); ?>
+            <div class="form-group">
+                <label>Kode Transaksi</label>
+                <input type="text" name="kode_transaksi" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Kode Dinas</label>
+                <input type="text" name="kode_dinas" class="form-control">
+            </div>
             <div class="form-group">
                 <label>Kode Barang</label>
                 <input type="text" name="kode_barang" class="form-control">
             </div>
             <div class="form-group">
-                <label>Nama Barang</label>
-                <input type="text" name="nama_barang" class="form-control">
+                <label>Harga</label>
+                <input type="text" name="harga" class="form-control">
             </div>
             <div class="form-group">
-                <label>Foto Barang</label>
-                <input type="file" name="foto_barang" class="form-control">
+                <label>Tempat Pembelian</label>
+                <input type="text" name="tempat_pembelian" class="form-control">
             </div>
             <div class="form-group">
-                <label>Merk Barang</label>
-                <input type="text" name="merk" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Nomor Seri Pabrik Barang</label>
-                <input type="text" name="no_seri_pabrik" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Ukuran</label>
-                <input type="text" name="ukuran" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Bahan</label>
-                <input type="text" name="bahan" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Tahun Pembuatan</label>
-                <input type="date" name="tahun_pembuatan" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Jumlah Barang</label>
-                <input type="text" name="jumlah_barang" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Harga Beli</label>
-                <input type="text" name="harga_beli" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Keadaan Barang</label>
-                <select class="form-control" name="keadaan_barang">
-                  <option>Baik Sekali</option>
-                  <option>Baik</option>
-                  <option>Rusak</option>
-                  <option>Rusak Parah</option>
-                </select>
+                <label>Tanggal Pembelian</label>
+                <input type="date" name="tanggal_pembelian" class="form-control">
             </div>
             <div class="form-group">
                 <label>Keterangan</label>
