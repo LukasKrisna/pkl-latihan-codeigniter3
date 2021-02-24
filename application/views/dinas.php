@@ -21,7 +21,7 @@
       <?php echo $this->session->flashdata('message');?>
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-plus">
-                Tambah Data Barang
+                Tambah Data Dinas
             </i>
         </button>
         <a href="<?php echo base_url('dinas/print'); ?>" class="btn btn-danger"><i class="fa fa-print">Print</i></a>
@@ -63,7 +63,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">INPUT DATA BARANG</h4>
+        <h4 class="modal-title" id="exampleModalLabel">INPUT DATA DINAS</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

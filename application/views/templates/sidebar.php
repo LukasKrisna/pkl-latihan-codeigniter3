@@ -32,7 +32,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link ">
+            <a href="<?= base_url('Dinas')?>" class="nav-link ">
               <i class="nav-icon fas fa-university"></i>
               <p>
                 Dinas
@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link ">
+            <a href="<?= base_url('Barang');?>" class="nav-link ">
               <i class="nav-icon fas fa-boxes"></i>
               <p>
                 Barang
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link ">
+            <a href="<?= base_url('Ruangan');?>" class="nav-link ">
               <i class="nav-icon fas fa-door-open"></i>
               <p>
                 Ruangan
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link ">
+            <a href="<?= base_url('Transaksi')?>" class="nav-link ">
               <i class="nav-icon fas fa-coins"></i>
               <p>
                 Transaksi
