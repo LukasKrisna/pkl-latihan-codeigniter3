@@ -14,16 +14,14 @@ class Dinas extends CI_Controller
     }
     public function tambahAksi()
     {
-        $kode_dinas             = $this->input->post('kode_dinas');
-        $unit_organiasi         = $this->input->post('unit_organisasi');
-        $sub_unit_organisasi    = $this->input->post('sub_unit_organisasi');
-        $upb                    = $this->input->post('upb');
+        $kode_dinas   = $this->input->post('kode_dinas');
+        $nama_dinas   = $this->input->post('nama_dinas');
+        $alamat       = $this->input->post('alamat');
         
         $data = array(
-            'kode_dinas'            => $kode_dinas,
-            'unit_organisasi'       => $unit_organisasi,
-            'sub_unit_organisasi'   => $sub_unit_organisasi,
-            'upb'                   => $upb
+            'kode_dinas'    => $kode_dinas,
+            'nama_dinas'    => $nama_dinas,
+            'alamat'        => $alamat
 
         );
 
@@ -55,10 +53,10 @@ class Dinas extends CI_Controller
         $where = array('kode_dinas' => $kode_dinas );
         $data['dinas'] = $this->m_dinas->editData($where, 'dinas')->result();
 
-        $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('editDinas', $data);
-		$this->load->view('templates/footer');
+      $this->load->view('templates/header');
+		  $this->load->view('templates/sidebar');
+		  $this->load->view('editDinas', $data);
+		  $this->load->view('templates/footer');
     }
     public function updateData()
     {

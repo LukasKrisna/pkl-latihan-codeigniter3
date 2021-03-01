@@ -35,9 +35,8 @@
         <tr>
           <th>NO</th>
           <th>KODE DINAS</th>
-          <th>UNIT ORGANISASI</th>
-          <th>SUB UNIT ORGANISASI</th>
-          <th>UPB</th>
+          <th>NAMA DINAS</th>
+          <th>ALAMAT</th>
           <th>AKSI</th>
         
         </tr>
@@ -47,9 +46,8 @@
         <tr>
           <td><?php echo $no++ ?></td>
           <td><?php echo $dns->kode_dinas ?></td>
-          <td><?php echo $dns->unit_organisasi ?></td>
-          <td><?php echo $dns->sub_unit_organisasi ?></td>
-          <td><?php echo $dns->upb ?></td>
+          <td><?php echo $dns->nama_dinas ?></td>
+          <td><?php echo $dns->alamat ?></td>
           <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('dinas/hapusData/'.$dns->kode_dinas, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
           <td><?php echo anchor('dinas/editData/'.$dns->kode_dinas, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
         </tr>
@@ -75,18 +73,13 @@
                 <input type="text" name="kode_dinas" class="form-control">
             </div>
             <div class="form-group">
-                <label>Unit Organisasi</label>
-                <input type="text" name="unit_organisasi" class="form-control">
+                <label>Nama Dinas</label>
+                <input type="text" name="nama_dinas" class="form-control">
             </div>
             <div class="form-group">
-                <label>Sub Unit Organisasi</label>
-                <input type="text" name="sub_unit_organisasi" class="form-control">
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="form-control">
             </div>
-            <div class="form-group">
-                <label>UPB</label>
-                <input type="text" name="upb" class="form-control">
-            </div>
-            
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
         <?php echo form_close(); ?>

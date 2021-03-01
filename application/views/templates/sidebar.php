@@ -43,7 +43,7 @@
             <a href="<?= base_url('Barang');?>" class="nav-link ">
               <i class="nav-icon fas fa-boxes"></i>
               <p>
-                Barang
+                Master Aset
               </p>
             </a>
           </li>
