@@ -21,20 +21,12 @@
                 </td>
             </tr>
             <tr>
-                <th>Luas Ruangan</th>
-                <td><?php echo $detail->luas_ruangan ?></td>
+                <th>Created At</th>
+                <td><?php echo $detail->created_at ?></td>
             </tr>
             <tr>
-                <th>Jumlah Barang</th>
-                <td><?php echo $detail->jumlah_barang ?></td>
-            </tr>
-            <tr>
-                <th>Aset Ruangan</th>
-                <td><?php echo $detail->aset_ruangan ?></td>
-            </tr>
-            <tr>
-                <th>Keterangan</th>
-                <td><?php echo $detail->keterangan ?></td>
+                <th>Updated At</th>
+                <td><?php echo $detail->updated_at ?></td>
             </tr>
         </table>
         <a href="<?php echo base_url('ruangan/index');?>" class="btn btn-primary">Kembali</a>

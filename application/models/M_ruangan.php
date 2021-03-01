@@ -35,10 +35,6 @@ class M_ruangan extends CI_Model
         $this->db->like('kode_ruangan', $keyword);
         $this->db->or_like('kode_dinas', $keyword);
         $this->db->or_like('nama_ruangan', $keyword);
-        $this->db->or_like('luas_ruangan', $keyword);
-        $this->db->or_like('jumlah_barang', $keyword);
-        $this->db->or_like('aset_ruangan', $keyword);
-        $this->db->or_like('keterangan', $keyword);
 
         return $this->db->get()->result();
     }

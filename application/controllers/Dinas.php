@@ -60,16 +60,14 @@ class Dinas extends CI_Controller
     }
     public function updateData()
     {
-      $kode_dinas           = $this->input->post('kode_dinas');
-      $unit_organisasi      = $this->input->post('unit_organisasi');
-      $sub_unit_organisasi  = $this->input->post('sub_unit_organisasi');
-      $upb                  = $this->input->post('upb');
+      $kode_dinas   = $this->input->post('kode_dinas');
+      $nama_dinas   = $this->input->post('nama_dinas');
+      $alamat       = $this->input->post('alamat');
 
       $data = array(
-          'kode_dinas'            => $kode_dinas,
-          'unit_organisasi'       => $unit_organisasi,
-          'sub_unit_organisasi'   => $sub_unit_organisasi,
-          'upb'                   => $upb 
+          'kode_dinas'    => $kode_dinas,
+          'nama_dinas'    => $nama_dinas,
+          'alamat'        => $alamat
       );
 
       $where = array('kode_dinas' => $kode_dinas);

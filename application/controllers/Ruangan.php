@@ -18,10 +18,8 @@ class Ruangan extends CI_Controller
         $kode_dinas             = $this->input->post('kode_dinas');
         $nama_ruangan           = $this->input->post('nama_ruangan');
         $foto_ruangan           = $_FILES['foto_ruangan'];
-        $luas_ruangan           = $this->input->post('luas_ruangan');
-        $jumlah_barang          = $this->input->post('jumlah_barang');
-        $aset_ruangan           = $this->input->post('aset_ruangan');
-        $keterangan             = $this->input->post('keterangan');
+        $created_at             = $this->input->post('created_at');
+        $updated_at             = $this->input->post('updated_at');
 
         if ($foto_ruangan='') {
             
@@ -46,10 +44,8 @@ class Ruangan extends CI_Controller
             'kode_dinas'    => $kode_dinas,
             'nama_ruangan'  => $nama_ruangan,
             'foto_ruangan'  => $foto_ruangan,
-            'luas_ruangan'  => $luas_ruangan,
-            'jumlah_barang' => $jumlah_barang,
-            'aset_ruangan'  => $aset_ruangan,
-            'keterangan'    => $keterangan
+            'created_at'    => $created_at,
+            'updated_at'    => $updated_at
         );
         $this->m_ruangan->inputData($data, 'ruangan');
         $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">
@@ -89,20 +85,16 @@ class Ruangan extends CI_Controller
         $kode_dinas        = $this->input->post('kode_dinas');
         $nama_ruangan      = $this->input->post('nama_ruangan');
         $foto_ruangan      = $this->input->post('foto_ruangan');
-        $luas_ruangan      = $this->input->post('luas_ruangan');
-        $jumlah_barang     = $this->input->post('jumlah_barang');
-        $aset_ruangan      = $this->input->post('aset_ruangan');
-        $keterangan        = $this->input->post('keterangan');
+        $created_at        = $this->input->post('created_at');
+        $updated_at        = $this->input->post('updated_at');
 
         $data = array(
             'kode_ruangan'  => $kode_ruangan,
             'kode_dinas'    => $kode_dinas,
             'nama_ruangan'  => $nama_ruangan,
             'foto_ruangan'  => $foto_ruangan,
-            'luas_ruangan'  => $luas_ruangan,
-            'jumlah_barang' => $jumlah_barang,
-            'aset_ruangan'  => $aset_ruangan,
-            'keterangan'    => $keterangan
+            'created_at'    => $created_at,
+            'updated_at'    => $updated_at
         );
         $where = array('kode_ruangan' => $kode_ruangan);
         $this->m_ruangan->updateData($where, $data, 'ruangan');

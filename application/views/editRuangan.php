@@ -21,20 +21,12 @@
                 <input type="text" name="foto_ruangan" class="form-control" value="<?php echo $rua->foto_ruangan; ?>">
             </div>
             <div class="form-group">
-                <label>Luas Ruangan</label>
-                <input type="text" name="luas_ruangan" class="form-control" value="<?php echo $rua->luas_ruangan; ?>">
+                <label>Created At</label>
+                <input type="date" name="created_at" class="form-control" value="<?php echo $rua->created_at; ?>">
             </div>
             <div class="form-group">
-                <label>Jumlah Barang</label>
-                <input type="text" name="jumlah_barang" class="form-control" value="<?php echo $rua->jumlah_barang; ?>">
-            </div>
-            <div class="form-group">
-                <label>Aset Ruangan</label>
-                <input type="text" name="aset_ruangan" class="form-control" value="<?php echo $rua->aset_ruangan; ?>">
-            </div>
-            <div class="form-group">
-                <label>Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" value="<?php echo $rua->keterangan; ?>">
+                <label>Updated At</label>
+                <input type="date" name="updated_at" class="form-control" value="<?php echo $rua->updated_at; ?>">
             </div>
             <button type="reset" class="btn btn-danger">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>

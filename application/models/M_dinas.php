@@ -28,9 +28,8 @@ class M_dinas extends CI_Model
         $this->db->select('*');
         $this->db->from('dinas');
         $this->db->like('kode_dinas', $keyword);
-        $this->db->or_like('unit_organisasi', $keyword);
-        $this->db->or_like('sub_unit_organisasi', $keyword);
-        $this->db->or_like('upb', $keyword);
+        $this->db->or_like('nama_dinas', $keyword);
+        $this->db->or_like('alamat', $keyword);
 
         return $this->db->get()->result();
 

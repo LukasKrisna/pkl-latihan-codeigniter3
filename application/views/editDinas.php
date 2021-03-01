@@ -7,16 +7,12 @@
                 <input type="hidden" name="kode_dinas" class="form-control" value="<?php echo $dns->kode_dinas; ?>">
             </div>
             <div class="form-group">
-                <label>Unit Organisasi</label>
-                <input type="text" name="unit_organisasi" class="form-control" value="<?php echo $dns->unit_organisasi; ?>">
+                <label>Nama Dinas</label>
+                <input type="text" name="nama_dinas" class="form-control" value="<?php echo $dns->nama_dinas; ?>">
             </div>
             <div class="form-group">
-                <label>Sub Unit Organisasi</label>
-                <input type="text" name="sub_unit_organisasi" class="form-control" value="<?php echo $dns->sub_unit_organisasi; ?>">
-            </div>
-            <div class="form-group">
-                <label>UPB</label>
-                <input type="text" name="upb" class="form-control" value="<?php echo $dns->upb; ?>">
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="form-control" value="<?php echo $dns->alamat; ?>">
             </div>
             
             <button type="reset" class="btn btn-danger">Reset</button>
