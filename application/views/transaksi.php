@@ -34,11 +34,12 @@
                 <th>NO</th>
                 <th>KODE TRANSAKSI</th>
                 <th>KODE DINAS</th>
-                <th>KODE BARANG</th>
-                <th>HARGA</th>
-                <!-- <th>TEMPAT PEMBELIAN</th> -->
+                <th>KODE RUANGAN</th>
+                <th>KODE ASET</th>
+                <th>MERK ASET</th>
+                <th>JUMLAH ASET</th>
                 <th>TANGGAL PEMBELIAN</th>
-                <!-- <th>KETERANGAN</th> -->
+                <th>KONDISI ASET</th>
                 <th colspan="2">AKSI</th>
             </tr>
 
@@ -49,11 +50,12 @@
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $tra->kode_transaksi;?></td>
                 <td><?php echo $tra->kode_dinas;?></td>
+                <td><?php echo $tra->kode_ruangan;?></td>
                 <td><?php echo $tra->kode_barang;?></td>
                 <td><?php echo $tra->harga;?></td>
-                <!-- <td><#?php echo $tra->tempat_pembelian;?></td> -->
+                <td><?php echo $tra->tempat_pembelian;?></td>
                 <td><?php echo $tra->tanggal_pembelian;?></td>
-                <!-- <td><#?php echo $tra->keterangan;?></td>                -->
+                <td><?php echo $tra->keterangan;?></td>               
                 <td><?php echo anchor('transaksi/detailData/'.$tra->kode_transaksi, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                 <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('transaksi/hapusData/'.$tra->kode_transaksi, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td><?php echo anchor('transaksi/editData/'.$tra->kode_transaksi, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
@@ -86,24 +88,33 @@
                 <input type="text" name="kode_dinas" class="form-control">
             </div>
             <div class="form-group">
-                <label>Kode Barang</label>
-                <input type="text" name="kode_barang" class="form-control">
+                <label>Kode Ruangan</label>
+                <input type="text" name="kode_ruangan" class="form-control">
             </div>
             <div class="form-group">
-                <label>Harga</label>
-                <input type="text" name="harga" class="form-control">
+                <label>Kode Aset</label>
+                <input type="text" name="kode_aset" class="form-control">
             </div>
             <div class="form-group">
-                <label>Tempat Pembelian</label>
-                <input type="text" name="tempat_pembelian" class="form-control">
+                <label>Merk Aset</label>
+                <input type="text" name="merk_aset" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Jumlah Aset</label>
+                <input type="text" name="jumlah_aset" class="form-control">
             </div>
             <div class="form-group">
                 <label>Tanggal Pembelian</label>
-                <input type="date" name="tanggal_pembelian" class="form-control">
+                <input type="date" name="tgl_pembelian" class="form-control">
             </div>
             <div class="form-group">
-                <label>Keterangan</label>
-                <input type="text" name="keterangan" class="form-control">
+                <label>Kondisi Aset</label>
+                <select class="form-control" name="kondisi_aset">
+                  <option>Baik Sekali</option>
+                  <option>Baik</option>
+                  <option>Rusak</option>
+                  <option>Rusak Parah</option>
+                </select>
             </div>
             
             <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>

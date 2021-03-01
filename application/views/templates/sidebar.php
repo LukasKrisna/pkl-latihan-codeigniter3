@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview menu-open">
-            <a href="<?= base_url('Barang');?>" class="nav-link ">
+            <a href="<?= base_url('Master_aset');?>" class="nav-link ">
               <i class="nav-icon fas fa-boxes"></i>
               <p>
                 Master Aset

@@ -16,20 +16,22 @@ class Transaksi extends CI_Controller
     {
         $kode_transaksi     = $this->input->post('kode_transaksi');
         $kode_dinas         = $this->input->post('kode_dinas');
-        $kode_barang        = $this->input->post('kode_barang');
-        $harga              = $this->input->post('harga');
-        $tempat_pembelian   = $this->input->post('tempat_pembelian');
-        $tanggal_pembelian  = $this->input->post('tanggal_pembelian');
-        $keterangan         = $this->input->post('keterangan');
+        $kode_ruangan       = $this->input->post('kode_ruangan');
+        $kode_aset          = $this->input->post('kode_aset');
+        $merk_aset          = $this->input->post('merk_aset');
+        $jumlah_aset        = $this->input->post('jumlah_aset');
+        $tgl_pembelian      = $this->input->post('tgl_pembelian');
+        $kondisi_aset       = $this->input->post('kondisi_aset');
 
         $data = array(
             'kode_transaksi'    => $kode_transaksi,
             'kode_dinas'        => $kode_dinas,
-            'kode_barang'       => $kode_barang,
-            'harga'             => $harga,
-            'tempat_pembelian'  => $tempat_pembelian,
-            'tanggal_pembelian' => $tanggal_pembelian,
-            'keterangan'        => $keterangan 
+            'kode_ruangan'      => $kode_ruangan,
+            'kode_aset'         => $kode_aset,
+            'merk_aset'         => $merk_aset,
+            'jumlah_aset'       => $jumlah_aset,
+            'tgl_pembelian'     => $tgl_pembelian,
+            'kondisi_aset'      => $kondisi_aset 
         );
 
         $this->m_transaksi->inputData($data, 'transaksi');
@@ -71,22 +73,24 @@ class Transaksi extends CI_Controller
     {
         $kode_transaksi     = $this->input->post('kode_transaksi');
         $kode_dinas         = $this->input->post('kode_dinas');
-        $kode_barang        = $this->input->post('kode_barang');
-        $harga              = $this->input->post('harga');
-        $tempat_pembelian   = $this->input->post('tempat_pembelian');
-        $tanggal_pembelian  = $this->input->post('tanggal_pembelian');
-        $keterangan         = $this->input->post('keterangan');
+        $kode_ruangan       = $this->input->post('kode_ruangan');
+        $kode_aset          = $this->input->post('kode_aset');
+        $merk_aset          = $this->input->post('merk_aset');
+        $jumlah_aset        = $this->input->post('jumlah_aset');
+        $tgl_pembelian      = $this->input->post('tgl_pembelian');
+        $kondisi_aset       = $this->input->post('kondisi_aset');
 
         $data = array(
             'kode_transaksi'    => $kode_transaksi,
             'kode_dinas'        => $kode_dinas,
-            'kode_barang'       => $kode_barang,
-            'harga'             => $harga,
-            'tempat_pembelian'  => $tempat_pembelian,
-            'tanggal_pembelian' => $tanggal_pembelian,
-            'keterangan'        => $keterangan 
+            'kode_ruangan'      => $kode_ruangan,
+            'kode_aset'         => $kode_aset,
+            'merk_aset'         => $merk_aset,
+            'jumlah_aset'       => $jumlah_aset,
+            'tgl_pembelian'     => $tgl_pembelian,
+            'kondisi_aset'      => $kondisi_aset 
         );
-        $where = array('kode_barang' => $kode_barang, );
+        $where = array('kode_ruangan' => $kode_ruangan, );
         $this->m_transaksi->updateData($where, $data, 'transaksi');
         $this->session->set_flashdata('message', '
         <div class="alert alert-primary alert-dismissible" role="alert">

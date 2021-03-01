@@ -11,24 +11,28 @@
                 <input type="text" name="kode_dinas" class="form-control" value="<?php echo $tra->kode_dinas; ?>">
             </div>
             <div class="form-group">
-                <label>Kode Barang</label>
-                <input type="text" name="kode_barang" class="form-control" value="<?php echo $tra->kode_barang; ?>">
+                <label>Kode Ruangan</label>
+                <input type="text" name="kode_ruangan" class="form-control" value="<?php echo $tra->kode_ruangan; ?>">
             </div>
             <div class="form-group">
-                <label>Harga</label>
-                <input type="text" name="harga" class="form-control" value="<?php echo $tra->harga; ?>">
+                <label>Kode Aset</label>
+                <input type="text" name="kode_aset" class="form-control" value="<?php echo $tra->kode_aset; ?>">
             </div>
             <div class="form-group">
-                <label>Tempat Pembelian</label>
-                <input type="text" name="tempat_pembelian" class="form-control" value="<?php echo $tra->tempat_pembelian; ?>">
+                <label>Merk Aset</label>
+                <input type="text" name="merk_aset" class="form-control" value="<?php echo $tra->merk_aset; ?>">
+            </div>
+            <div class="form-group">
+                <label>Jumlah Aset</label>
+                <input type="text" name="jumlah_aset" class="form-control" value="<?php echo $tra->jumlah_aset; ?>">
             </div>
             <div class="form-group">
                 <label>Tanggal Pembelian</label>
-                <input type="date" name="tanggal_pembelian" class="form-control" value="<?php echo $tra->tanggal_pembelian; ?>">
+                <input type="date" name="tgl_pembelian" class="form-control" value="<?php echo $tra->tgl_pembelian; ?>">
             </div>
             <div class="form-group">
-                <label>Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" value="<?php echo $tra->keterangan; ?>">
+                <label>Kondisi Aset</label>
+                <input type="text" name="keterangan" class="form-control" value="<?php echo $tra->kondisi_aset; ?>">
             </div>
             <button type="reset" class="btn btn-danger">Reset</button>
             <button type="submit" class="btn btn-primary">Simpan</button>

@@ -34,11 +34,12 @@ class M_transaksi extends CI_Model
         $this->db->from('transaksi');
         $this->db->like('kode_transaksi', $keyword);
         $this->db->or_like('kode_dinas', $keyword);
-        $this->db->or_like('kode_barang', $keyword);
-        $this->db->or_like('harga', $keyword);
-        $this->db->or_like('tempat_pembelian', $keyword);
-        $this->db->or_like('tanggal_pembelian', $keyword);
-        $this->db->or_like('keterangan', $keyword);
+        $this->db->or_like('kode_ruangan', $keyword);
+        $this->db->or_like('kode_aset', $keyword);
+        $this->db->or_like('merk_aset', $keyword);
+        $this->db->or_like('jumlah_aset', $keyword);
+        $this->db->or_like('tgl_pembelian', $keyword);
+        $this->db->or_like('kondisi_aset', $keyword);
 
         return $this->db->get()->result();
     }
