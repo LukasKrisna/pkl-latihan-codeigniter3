@@ -11,24 +11,28 @@
                 <td><?php echo $detail->kode_dinas ?></td>
             </tr>
             <tr>
-                <th>Kode Barang</th>
-                <td><?php echo $detail->kode_barang ?></td>
+                <th>Kode Ruangan</th>
+                <td><?php echo $detail->kode_ruangan ?></td>
             </tr>
             <tr>
-                <th>Harga</th>
-                <td><?php echo $detail->harga ?></td>
+                <th>Kode Aset</th>
+                <td><?php echo $detail->kode_aset ?></td>
             </tr>
             <tr>
-                <th>Tempat Pembelian</th>
-                <td><?php echo $detail->tempat_pembelian ?></td>
+                <th>Merk Aset</th>
+                <td><?php echo $detail->merk_aset ?></td>
+            </tr>
+            <tr>
+                <th>Jumlah Aset</th>
+                <td><?php echo $detail->jumlah_aset ?></td>
             </tr>
             <tr>
                 <th>Tanggal Pemebelian</th>
-                <td><?php echo $detail->tanggal_pembelian ?></td>
+                <td><?php echo $detail->tgl_pembelian ?></td>
             </tr>
             <tr>
-                <th>Keterangan</th>
-                <td><?php echo $detail->keterangan ?></td>
+                <th>Kondisi Aset</th>
+                <td><?php echo $detail->kondisi_aset ?></td>
             </tr>
         </table>
         <a href="<?php echo base_url('transaksi/index');?>" class="btn btn-primary">Kembali</a>

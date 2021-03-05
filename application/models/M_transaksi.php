@@ -43,6 +43,21 @@ class M_transaksi extends CI_Model
 
         return $this->db->get()->result();
     }
+
+    public function tambilDataDinas()
+    {
+        return $this->db->get('dinas');
+    }
+
+    public function keyRuangan()
+    {
+        return $this->db->get('ruangan');
+    }
+
+    public function keyAset()
+    {
+        return $this->db->get('master_aset');
+    }
 }
 
 

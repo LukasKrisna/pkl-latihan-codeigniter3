@@ -5,7 +5,10 @@ class Transaksi extends CI_Controller
 {
     public function index()
     {
-        $data['transaksi'] = $this->m_transaksi->tampilData()->result();
+        $data['transaksi']  = $this->m_transaksi->tampilData()->result();
+        $data['datadinas']  = $this->m_transaksi->tambilDataDinas()->result();
+        $data['keyruangan'] = $this->m_transaksi->keyRuangan()->result();
+        $data['keyaset']    = $this->m_transaksi->keyAset()->result();
 
         $this->load->view('templates/header');
 		    $this->load->view('templates/sidebar');

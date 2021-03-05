@@ -51,11 +51,11 @@
                 <td><?php echo $tra->kode_transaksi;?></td>
                 <td><?php echo $tra->kode_dinas;?></td>
                 <td><?php echo $tra->kode_ruangan;?></td>
-                <td><?php echo $tra->kode_barang;?></td>
-                <td><?php echo $tra->harga;?></td>
-                <td><?php echo $tra->tempat_pembelian;?></td>
-                <td><?php echo $tra->tanggal_pembelian;?></td>
-                <td><?php echo $tra->keterangan;?></td>               
+                <td><?php echo $tra->kode_aset;?></td>
+                <td><?php echo $tra->merk_aset;?></td>
+                <td><?php echo $tra->jumlah_aset;?></td>
+                <td><?php echo $tra->tgl_pembelian;?></td>
+                <td><?php echo $tra->kondisi_aset;?></td>               
                 <td><?php echo anchor('transaksi/detailData/'.$tra->kode_transaksi, '<div class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></div>') ?></td>
                 <td onclick="javascript: return confirm('Anda yakin ingin menghapus?')"><?php echo anchor('transaksi/hapusData/'.$tra->kode_transaksi, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                 <td><?php echo anchor('transaksi/editData/'.$tra->kode_transaksi, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
@@ -85,15 +85,33 @@
             </div>
             <div class="form-group">
                 <label>Kode Dinas</label>
-                <input type="text" name="kode_dinas" class="form-control">
+                <!-- <input type="text" name="kode_dinas" class="form-control"> -->
+                <select name="kode_dinas" id="kode_dinas" class="form-control">
+                  <option value="0">--Pilih Dinas--</option>
+                  <?php foreach ($datadinas as $dd) :?>
+                    <option value="<?= $dd->kode_dinas;?>"><?= $dd->nama_dinas;?></option>
+                  <?php endforeach; ?>
+                </select>
             </div>
             <div class="form-group">
                 <label>Kode Ruangan</label>
-                <input type="text" name="kode_ruangan" class="form-control">
+                <!-- <input type="text" name="kode_ruangan" class="form-control"> -->
+                <select name="kode_ruangan" id="kode_ruangan" class="form-control">
+                    <option value="0">--Pilih Ruangan--</option>
+                    <?php foreach ($keyruangan as $rua):?>
+                      <option value="<?= $rua->kode_ruangan;?>"><?= $rua->nama_ruangan;?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="form-group">
                 <label>Kode Aset</label>
-                <input type="text" name="kode_aset" class="form-control">
+                <!-- <input type="text" name="kode_aset" class="form-control"> -->
+                <select name="kode_aset" id="kode_aset" class="form-control">
+                      <option value="0">--Pilih Aset--</option>
+                      <?php foreach ($keyaset as $aset): ?>
+                      <option value="<?= $aset->kode_aset;?>"><?= $aset->jenis_aset;?></option>
+                      <?php endforeach ?>
+                </select>
             </div>
             <div class="form-group">
                 <label>Merk Aset</label>
