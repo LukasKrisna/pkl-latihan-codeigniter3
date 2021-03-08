@@ -85,7 +85,7 @@ class Master_aset extends CI_Controller
     public function print()
     {
       $data['aset'] = $this->M_Master_aset->tampilData('master_aset')->result();
-      $this->load->view('print_barang', $data);
+      $this->load->view('print_aset', $data);
     }
     public function search()
     {

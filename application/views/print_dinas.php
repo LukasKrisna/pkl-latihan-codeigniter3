@@ -15,18 +15,17 @@
         <tr>
             <th>NO</th>
             <th>KODE DINAS</th>
-            <th>UNIT ORGANISASI</th>
-            <th>SUB UNIT ORGANISASI</th>
-            <th>UPB</th>                                                                        </tr>
+            <th>NAMA DINAS</th>
+            <th>ALAMAT</th>                                                                        
+        </tr>
         <?php 
         $no = 1;
         foreach ($dinas as $dns): ?>
         <tr>
             <td><?php echo $no++ ?></td>
             <td><?php echo $dns->kode_dinas ?></td>
-            <td><?php echo $dns->unit_organisasi;?></td>
-            <td><?php echo $dns->sub_unit_organisasi;?></td>
-            <td><?php echo $dns->upb;?></td>  
+            <td><?php echo $dns->nama_dinas;?></td>
+            <td><?php echo $dns->alamat;?></td>  
         </tr>
         <?php endforeach; ?>
     </table>
