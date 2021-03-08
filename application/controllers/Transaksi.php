@@ -17,7 +17,7 @@ class Transaksi extends CI_Controller
     }
     public function inputData()
     {
-        $kode_transaksi     = $this->input->post('kode_transaksi');
+        
         $kode_dinas         = $this->input->post('kode_dinas');
         $kode_ruangan       = $this->input->post('kode_ruangan');
         $kode_aset          = $this->input->post('kode_aset');
@@ -27,7 +27,6 @@ class Transaksi extends CI_Controller
         $kondisi_aset       = $this->input->post('kondisi_aset');
 
         $data = array(
-            'kode_transaksi'    => $kode_transaksi,
             'kode_dinas'        => $kode_dinas,
             'kode_ruangan'      => $kode_ruangan,
             'kode_aset'         => $kode_aset,
@@ -74,7 +73,6 @@ class Transaksi extends CI_Controller
     }
     public function updateData()
     {
-        $kode_transaksi     = $this->input->post('kode_transaksi');
         $kode_dinas         = $this->input->post('kode_dinas');
         $kode_ruangan       = $this->input->post('kode_ruangan');
         $kode_aset          = $this->input->post('kode_aset');
@@ -84,7 +82,6 @@ class Transaksi extends CI_Controller
         $kondisi_aset       = $this->input->post('kondisi_aset');
 
         $data = array(
-            'kode_transaksi'    => $kode_transaksi,
             'kode_dinas'        => $kode_dinas,
             'kode_ruangan'      => $kode_ruangan,
             'kode_aset'         => $kode_aset,
@@ -93,7 +90,7 @@ class Transaksi extends CI_Controller
             'tgl_pembelian'     => $tgl_pembelian,
             'kondisi_aset'      => $kondisi_aset 
         );
-        $where = array('kode_ruangan' => $kode_ruangan, );
+        $where = array('kode_transaksi' => $kode_transaksi, );
         $this->m_transaksi->updateData($where, $data, 'transaksi');
         $this->session->set_flashdata('message', '
         <div class="alert alert-primary alert-dismissible" role="alert">

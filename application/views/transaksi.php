@@ -49,9 +49,9 @@
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $tra->kode_transaksi;?></td>
-                <td><?php echo $tra->kode_dinas;?></td>
-                <td><?php echo $tra->kode_ruangan;?></td>
-                <td><?php echo $tra->kode_aset;?></td>
+                <td><?php echo $tra->nama_dinas;?></td>
+                <td><?php echo $tra->kode_ruangan.' - '.$tra->nama_ruangan;?></td>
+                <td><?php echo $tra->kode_aset.' - '.$tra->jenis_aset;?></td>
                 <td><?php echo $tra->merk_aset;?></td>
                 <td><?php echo $tra->jumlah_aset;?></td>
                 <td><?php echo $tra->tgl_pembelian;?></td>
@@ -79,10 +79,6 @@
       </div>
       <div class="modal-body">
         <?php echo form_open_multipart('transaksi/inputData'); ?>
-            <div class="form-group">
-                <label>Kode Transaksi</label>
-                <input type="text" name="kode_transaksi" class="form-control">
-            </div>
             <div class="form-group">
                 <label>Kode Dinas</label>
                 <!-- <input type="text" name="kode_dinas" class="form-control"> -->

@@ -3,7 +3,13 @@ class M_transaksi extends CI_Model
 {
     public function tampilData()
     {
-        return $this->db->get('transaksi');
+        // return $this->db->get('transaksi');
+        $this->db->select('transaksi.*,dinas.nama_dinas,master_aset.jenis_aset,ruangan.nama_ruangan');
+        $this->db->from('transaksi');
+        $this->db->join('dinas','transaksi.kode_dinas=dinas.kode_dinas','left');
+        $this->db->join('ruangan','transaksi.kode_ruangan=ruangan.kode_ruangan','left');
+        $this->db->join('master_aset','transaksi.kode_aset=master_aset.kode_aset','left');
+        return $this->db->get();
     }
     public function inputData($data, $table)
     {
